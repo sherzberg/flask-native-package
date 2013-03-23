@@ -11,5 +11,5 @@ def deb():
         if not attr.startswith('_'):
             print attr, ':', getattr(deploy, attr)
     print
-    deploy.prepare_python_app()
+    deploy.prepare_python_app(requirements_file='requirements/base.txt')
     deploy.build_deb()
