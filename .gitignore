@@ -1,6 +1,6 @@
 *.py[cod]
 
-debian/*.deb
+*.deb
 
 # C extensions
 *.so

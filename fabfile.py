@@ -1,15 +1,13 @@
-from packager import Deployment
-from fabric.api import env
+from fabric.api import *
+from parcel.deploy import Deployment
+from parcel import distro
+
+env.app_name = 'flask-native-package'
+env.user = 'root'
 
 
-env.hosts = ['localhost:41022']
-
-
+@task
 def deb():
-    deploy = Deployment("wb", "flask-native-package", 'git@github.com:whelmingbytes/flask-native-package.git', build_user='vagrant')
-    for attr in dir(deploy):
-        if not attr.startswith('_'):
-            print attr, ':', getattr(deploy, attr)
-    print
-    deploy.prepare_python_app(requirements_file='requirements/base.txt')
-    deploy.build_deb()
+    deploy = Deployment(env.app_name, build_deps=['python-virtualenv', 'python-pip'], base='/opt/webapps/wb/testapp', arch=distro.Ubuntu())
+    deploy.prepare_app()
+    deploy.build_package()
