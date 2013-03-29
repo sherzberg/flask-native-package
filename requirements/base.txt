@@ -1,1 +1,13 @@
+Fabric==1.4.3
 Flask==0.9
+Jinja2==2.6
+Werkzeug==0.8.3
+argparse==1.2.1
+distribute==0.6.24
+loom==0.0.8
+paramiko==1.10.0
+-e hg+https://bitbucket.org/andrewmacgregor/parcel@b66ba95163c0d5f70108a695f1687114eeeaf506#egg=parcel-dev
+pycrypto==2.6
+requests==1.1.0
+ssh==1.8.0
+wsgiref==0.1.2
