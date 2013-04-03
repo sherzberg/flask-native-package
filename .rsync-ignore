@@ -1,0 +1,5 @@
+*.deb
+.git
+*.pyc
+fabfile.py
+*.*~
