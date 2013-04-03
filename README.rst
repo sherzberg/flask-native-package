@@ -4,6 +4,10 @@ flask-native-package
 This is a dummy package for testing out some native debian packages. It
 uses Parcel to build up a debian package used in native deployments.
 
+This test application requires Upstart only. It packages all the python dependencies
+up to run a simple "Hello World" Flask application on port 5000. When you install the
+built deb, an upstart script will be installed to run the app on startup.
+
 Setup
 =====
 
@@ -23,6 +27,9 @@ Build Deb
 This will copy code to the build server, create a python virtual environment
 with the dependencies defined in requirements.txt, and package everything up
 into a native deb.
+
+Install Built Deb
+=================
 
 Now you can either install the deb manually:
 
